@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exclusive Human Firewall security awareness offer - Limited access voucher">
+    <meta property="og:title" content="Limited Access Voucher - Human Firewall">
+    <meta property="og:description" content="Complimentary Human Risk Assessment - Worth £2,500">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <title>Limited Access Voucher - Human Firewall</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #0a0a0a;
+            color: #e5e5e5;
+            line-height: 1.6;
+        }
+
+        .container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+            border-radius: 12px;
+            padding: 3rem 2rem;
+            max-width: 70rem;
+            width: 100%;
+            border: 1px solid rgba(220, 38, 38, 0.3);
+            box-shadow: 0 0 30px rgba(220, 38, 38, 0.2);
+        }
+
+        .card.revealed {
+            max-width: 56rem;
+            border-color: rgba(100, 100, 100, 0.3);
+        }
+
+        .card.submitted {
+            border-color: rgba(100, 100, 100, 0.3);
+            background: rgba(26, 26, 26, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(220, 38, 38, 0.1);
+            border-radius: 9999px;
+            color: #DC2626;
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: #a3a3a3;
+            margin-bottom: 0.5rem;
+        }
+
+        .price {
+            font-size: 1.125rem;
+            color: #a3a3a3;
+        }
+
+        .benefits {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+        }
+
+        .benefit-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .icon {
+            flex-shrink: 0;
+            margin-right: 0.75rem;
+            margin-top: 0.125rem;
+        }
+
+        .icon-check {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: #DC2626;
+        }
+
+        .icon-alert {
+            width: 2rem;
+            height: 2rem;
+            color: #DC2626;
+        }
+
+        .code-box {
+            background: rgba(120, 120, 120, 0.1);
+            border: 1px solid rgba(120, 120, 120, 0.3);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .code-box p {
+            color: #a3a3a3;
+            font-size: 0.875rem;
+        }
+
+        .code-box .code {
+            color: #a3a3a3;
+            font-size: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        .button {
+            width: 100%;
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #ffffff;
+            background-color: #DC2626;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(220, 38, 38, 0.3);
+            height: 3.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .button:hover {
+            background-color: #b91c1c;
+            box-shadow: 0 0 30px rgba(220, 38, 38, 0.5);
+        }
+
+        .button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .button-outline {
+            background-color: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: none;
+        }
+
+        .button-outline:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            box-shadow: none;
+        }
+
+        .disclaimer {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #a3a3a3;
+            margin-top: 1.5rem;
+        }
+
+        .alert-box {
+            background: rgba(220, 38, 38, 0.05);
+            border: 1px solid #DC2626;
+            border-radius: 8px;
+            padding: 2rem 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .alert-header {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .alert-icon {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            background: rgba(220, 38, 38, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .alert-content {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #ffffff;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            color: #ffffff;
+            font-size: 1rem;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus {
+            outline: none;
+            border-color: #DC2626;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .radio-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        input[type="radio"] {
+            width: 1.25rem;
+            height: 1.25rem;
+            cursor: pointer;
+        }
+
+        .radio-item label {
+            margin: 0;
+            cursor: pointer;
+            font-weight: normal;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            text-align: center;
+        }
+
+        .feature-icon {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background: rgba(220, 38, 38, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .feature-title {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        .feature-description {
+            font-size: 0.875rem;
+            color: #a3a3a3;
+        }
+
+        .success-icon {
+            width: 5rem;
+            height: 5rem;
+            border-radius: 50%;
+            background: rgba(220, 38, 38, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .divider {
+            margin: 3rem 0 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .privacy-note {
+            font-size: 0.75rem;
+            color: #a3a3a3;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .privacy-note strong {
+            color: #ffffff;
+        }
+
+        .privacy-note a {
+            color: #DC2626;
+            text-decoration: none;
+        }
+
+        .privacy-note a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                padding: 2rem 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .alert-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .alert-icon {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- CONFIGURATION - Replace these values before deployment -->
+    <script>
+        const CONFIG = {
+            DEPLOY_URL: "YOUR_DEPLOY_URL_HERE", // e.g., https://your-site.netlify.app
+            WEBHOOK_URL: "YOUR_WEBHOOK_URL_HERE", // Optional: Your lead capture webhook
+            CALENDAR_LINK: "https://calendly.com/vinayak-kapoor-infosecventures/30min" // Your booking calendar link
+        };
+    </script>
+
+    <div class="container">
+        <!-- Initial Offer View -->
+        <div id="offerView" class="card">
+            <div style="text-align: center;">
+                <span class="badge">EXCLUSIVE NETWORK OFFER</span>
+                
+                <h1>Limited Access Voucher</h1>
+                
+                <p class="subtitle">Complimentary Human Risk Assessment</p>
+                <p class="price">Worth $2,500/AED 9,182 • Only 50 Available</p>
+            </div>
+
+            <div class="benefits">
+                <h2 style="font-size: 1.5rem;">What You'll Get:</h2>
+                <div class="benefit-item">
+                    <svg class="icon icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    <span>Comprehensive security awareness audit</span>
+                </div>
+                <div class="benefit-item">
+                    <svg class="icon icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    <span>Personalised human risk readiness score</span>
+                </div>
+                <div class="benefit-item">
+                    <svg class="icon icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    <span>Custom phishing simulation for your team</span>
+                </div>
+                <div class="benefit-item">
+                    <svg class="icon icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    <span>30-day trial of enterprise platform</span>
+                </div>
+            </div>
+
+            <div class="code-box">
+                <p>Valid until 31 December 2025</p>
+                <p class="code">Reference Code: HFW-LINK-2025</p>
+            </div>
+
+            <button class="button" onclick="revealPhishing()">
+                Claim Your Voucher Now
+            </button>
+
+            <p class="disclaimer">
+                By claiming this offer, you agree to receive communications from our security team.
+            </p>
+        </div>
+
+        <!-- Revealed/Education View -->
+        <div id="revealedView" class="hidden" style= "align: center;">
+            <!-- Alert Card -->
+            <div class="card alert-box">
+                <div class="alert-header">
+                    <div class="alert-icon">
+                        <svg class="icon-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                            <line x1="100" y1="100" x2="12" y2="13"></line>
+                            <line x1="100" y1="100" x2="12.01" y2="17"></line>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1>Oops… You Just Got Phished 😅</h1>
+                        <p style="font-size: 1.125rem; color: #a3a3a3;">
+                            Don't worry — this was a harmless demonstration. But here's the thing: if this were a real phishing attack, your organisation's data could now be at risk.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="alert-content">
+                    <h2 style="font-size: 1.25rem;">What Just Happened?</h2>
+                    <div class="benefit-item">
+                        <svg class="icon icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <span style="color: #a3a3a3;">You clicked on what appeared to be an exclusive, time-sensitive offer — a classic phishing tactic</span>
+                    </div>
+                    <div class="benefit-item">
+                        <svg class="icon icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <span style="color: #a3a3a3;">The urgency and exclusivity created pressure to act quickly without thinking</span>
+                    </div>
+                    <div class="benefit-item">
+                        <svg class="icon icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <span style="color: #a3a3a3;">No credentials were requested, but in a real attack, they would be</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- About Card -->
+            <div class="card" style="margin-bottom: 2rem;">
+                <h2>This Is Why Human Firewall Exists</h2>
+                <p style="font-size: 1.125rem; color: #a3a3a3; margin-bottom: 2rem;">
+                    90% of successful cyber attacks start with human error. Traditional awareness training doesn't work because it's forgettable and disconnected from real threats. Human Firewall changes that.
+                </p>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2">
+                                <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"></path>
+                                <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"></path>
+                            </svg>
+                        </div>
+                        <div class="feature-title">Real-Time Awareness</div>
+                        <div class="feature-description">Training that activates during actual attacks, not just once a year</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <div class="feature-title">Behaviour Change</div>
+                        <div class="feature-description">Measurable shifts in how your team identifies and responds to threats</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <div class="feature-title">Enterprise Protection</div>
+                        <div class="feature-description">Platform works when real attacks strike, not just in simulations</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lead Form Card -->
+            <div class="card" style="border-color: rgba(220, 38, 38, 0.5); box-shadow: 0 0 30px rgba(220, 38, 38, 0.2);">
+                <h2>Get Your Human Risk Readiness Score</h2>
+                <p style="font-size: 1.125rem; color: #a3a3a3; margin-bottom: 2rem;">
+                    Find out how vulnerable your organisation is to phishing attacks. No commitment, just insights.
+                </p>
+
+                <form id="leadForm" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="John Smith">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Work Email *</label>
+                        <input type="email" id="email" name="email" required placeholder="john.smith@company.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="organisation">Organisation *</label>
+                        <input type="text" id="organisation" name="organisation" required placeholder="Company Name Ltd">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Do you currently have security awareness training? *</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="yes" name="hasTraining" value="yes" required>
+                                <label for="yes">Yes, we have training in place</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="no" name="hasTraining" value="no" required>
+                                <label for="no">No, not currently</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="planning" name="hasTraining" value="planning" required>
+                                <label for="planning">We are planning to implement it</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="button">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                        Get My Risk Assessment
+                    </button>
+                </form>
+
+                <div class="divider">
+                    <p class="privacy-note">
+                        <strong>Privacy & Consent:</strong> This was a harmless marketing demonstration. No credentials were requested or captured. By submitting this form, you voluntarily provide your information and consent to receive our risk assessment and related communications. 
+                        <a href="#privacy">View Privacy Policy</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success View -->
+        <div id="successView" class="hidden card submitted">
+            <div class="success-icon">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#DC2626" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+            </div>
+
+            <h1 style="text-align: center;">Thank You for Taking the Challenge</h1>
+
+            <p style="font-size: 1.125rem; color: #a3a3a3; text-align: center; margin-bottom: 2rem;">
+                Your Human Risk Readiness Score will be sent to your email shortly. In the meantime, let's discuss how to strengthen your organisation's human firewall.
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 3rem;">
+                <button class="button" onclick="openCalendar()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                    Book a Free Consultation
+                </button>
+
+                <button class="button button-outline" onclick="shareLinkedIn()">
+                    Share Your Experience
+                </button>
+            </div>
+
+            <div class="divider">
+                <p class="privacy-note">
+                    <strong>Privacy Note:</strong> This was a harmless marketing demonstration. No credentials were collected or compromised. We only collected the information you voluntarily provided in the form. 
+                    <a href="#privacy">Privacy Policy</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional: Google Analytics (GA4) -->
+    <!-- Uncomment and replace GA_MEASUREMENT_ID with your actual ID -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    -->
+
+    <script>
+        // State management
+        let currentView = 'offer';
+
+        // View switching
+        function showView(view) {
+            document.getElementById('offerView').classList.add('hidden');
+            document.getElementById('revealedView').classList.add('hidden');
+            document.getElementById('successView').classList.add('hidden');
+
+            if (view === 'offer') {
+                document.getElementById('offerView').classList.remove('hidden');
+            } else if (view === 'revealed') {
+                document.getElementById('revealedView').classList.remove('hidden');
+            } else if (view === 'success') {
+                document.getElementById('successView').classList.remove('hidden');
+            }
+
+            currentView = view;
+        }
+
+        // Reveal phishing
+        function revealPhishing() {
+            showView('revealed');
+            
+            // Track conversion event (GA4)
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'phishing_revealed', {
+                    event_category: 'engagement',
+                    event_label: 'phishing_demo'
+                });
+            }
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Form submission
+        async function handleSubmit(event) {
+            event.preventDefault();
+
+            const formData = new FormData(event.target);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                organisation: formData.get('organisation'),
+                hasTraining: formData.get('hasTraining'),
+                timestamp: new Date().toISOString(),
+                source: 'linkedin_phishing_experiment',
+                url: window.location.href
+            };
+
+            try {
+                // Option 1: Send to webhook if configured
+                if (CONFIG.WEBHOOK_URL && CONFIG.WEBHOOK_URL !== "YOUR_WEBHOOK_URL_HERE") {
+                    await fetch(CONFIG.WEBHOOK_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(data)
+                    });
+                }
+
+                // Option 2: Store in localStorage
+                const existingLeads = JSON.parse(localStorage.getItem('hf_leads') || '[]');
+                existingLeads.push(data);
+                localStorage.setItem('hf_leads', JSON.stringify(existingLeads));
+
+                // Track conversion (GA4)
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'lead_captured', {
+                        event_category: 'conversion',
+                        event_label: 'form_submission'
+                    });
+                }
+
+                showView('success');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            } catch (error) {
+                console.error('Submission error:', error);
+                alert('Something went wrong. Please try again.');
+            }
+        }
+
+        // Calendar link
+        function openCalendar() {
+            if (CONFIG.CALENDAR_LINK && CONFIG.CALENDAR_LINK !== "https://calendly.com/vinayak-kapoor-infosecventures/30min") {
+                window.open(CONFIG.CALENDAR_LINK, '_blank');
+            } else {
+                alert('Calendar link not configured. Please update CONFIG.CALENDAR_LINK in the HTML.');
+            }
+        }
+
+        // LinkedIn share
+        function shareLinkedIn() {
+            const shareText = encodeURIComponent(
+                "I just experienced a brilliant phishing demo from Human Firewall 🧠 Think you can spot a phishing attempt? Try it yourself!"
+            );
+            const shareUrl = encodeURIComponent(window.location.href);
+            window.open(
+                `https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}&text=${shareText}`,
+                '_blank'
+            );
+        }
+
+        // Export leads from localStorage (for testing/admin)
+        function exportLeads() {
+            const leads = JSON.parse(localStorage.getItem('hf_leads') || '[]');
+            if (leads.length === 0) {
+                alert('No leads to export');
+                return;
+            }
+
+            const csv = [
+                ['Name', 'Email', 'Organisation', 'Has Training', 'Timestamp', 'Source', 'URL'],
+                ...leads.map(lead => [
+                    lead.name,
+                    lead.email,
+                    lead.organisation,
+                    lead.hasTraining,
+                    lead.timestamp,
+                    lead.source,
+                    lead.url
+                ])
+            ].map(row => row.join(',')).join('\n');
+
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'human-firewall-leads.csv';
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+
+        // Console helper for admins
+        console.log('Human Firewall Phishing Demo');
+        console.log('To export leads, run: exportLeads()');
+    </script>
+
+<script src="./hf-lead-capture.js"></script>
+</body>
+</html>
